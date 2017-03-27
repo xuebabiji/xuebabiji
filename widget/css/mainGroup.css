@@ -1,0 +1,9 @@
+
+
+#header_1, #header_2, #header_3, #header_4, #touBiao {
+	display: none;
+	min-height: 3.5rem;
+}
+#header_0 {
+	display: table;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>title</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+		<style>
+			.logo {
+				margin: 13% auto;
+			}
+			.aui-content {
+				width: 96vw;
+				margin-left: 2%;
+				border-radius: 1em;
+			}
+			.aui-list {
+				width: 94vw;
+				margin-left: 1%;
+			}
+			.forgetpwd {
+				font-size: 0.7em;
+				color: #03a9f4;
+			}
+			.aui-btn {
+				width: 96vw;
+				margin-left: 2%;
+				height: 5.7 vh;
+				line-height: 5.7 vh;
+				margin-top: 3vh;
+				margin-bottom: 3vh;
+				font-size: 1.3em;
+			}
+			.register {
+				width: 100%;
+				text-align: center;
+			}
+			.register a {
+				color: #03a9f4;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="aui-bar aui-bar-nav" style="padding-top:25px;">
+			<a class="aui-pull-right"> <span class="aui-iconfont aui-icon-close"></span> </a>
+		</header>
+		<div class="main">
+			<img src="../image/logo.png" class="logo">
+			<div class="aui-content aui-margin-b-15">
+				<ul class="aui-list aui-form-list">
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner">
+							<div class="aui-list-item-label-icon">
+								<i class="aui-iconfont aui-icon-mobile"></i>
+							</div>
+							<div class="aui-list-item-input">
+								<input type="text" placeholder="请输入用户名/手机号/邮箱">
+							</div>
+						</div>
+					</li>
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner">
+							<div class="aui-list-item-label-icon">
+								<i class="aui-iconfont aui-icon-lock"></i>
+							</div>
+							<div class="aui-list-item-input">
+								<input type="password" placeholder="请输入密码">
+							</div>
+							<div class="aui-list-item-label-icon">
+								<span class="forgetpwd">忘记密码？</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="aui-btn aui-btn-info">
+				登录
+			</div>
+			<div class="register">
+				<a href="#">注册新用户</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		apiready = function() {
+		};
+	</script>
+</html>
