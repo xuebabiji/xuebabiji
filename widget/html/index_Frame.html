@@ -16,48 +16,9 @@
 		</style>
 	</head>
 	<body>
-		<header id="header_0" class="aui-bar aui-bar-nav" style="padding-top:25px;">
-			<a class="aui-pull-left"> <span class="aui-iconfont aui-icon-search"></span></a>
-			<div class="aui-title">
-				<div class="aui-bar aui-bar-btn aui-bar-btn-round">
-					<div class="aui-bar-btn-item aui-active">
-						发现
-					</div>
-					<div class="aui-bar-btn-item">
-						帮帮
-					</div>
-				</div>
-			</div>
-			<a class="aui-pull-right"> <span class="aui-iconfont aui-icon-plus"></span> </a>
-		</header>
-		<header id="header_1" class="aui-bar aui-bar-nav" style="padding-top:25px">
-			<div class="aui-title">
-				<div class="aui-bar aui-bar-btn aui-bar-btn-round">
-					<div class="aui-bar-btn-item aui-active">
-						学霸文库
-					</div>
-					<div class="aui-bar-btn-item">
-						创意服务
-					</div>
-				</div>
-			</div>
-			<a class="aui-pull-right"> <span class="aui-iconfont aui-icon-search"></span> </a>
-		</header>
-		<header id="header_2" class="aui-bar aui-bar-nav" style="padding-top:25px;">
-			<div class="aui-title">
-				今天
-			</div>
-		</header>
-		<header id="header_3" class="aui-bar aui-bar-nav" style="padding-top:25px;">
-			<div class="aui-title">
-				消息
-			</div>
-		</header>
-		<header id="header_4" class="aui-bar aui-bar-nav" style="padding-top:25px;">
-			<div class="aui-title">
-				我
-			</div>
-		</header>
+
+
+
 		<div id="main"></div>
 		<footer class="aui-bar aui-bar-tab"  id="footer" >
 			<div class="aui-bar-tab-item aui-active" id="footer_0" tapmode>
@@ -195,8 +156,7 @@
 							name : 'mainGroup',
 							index : i
 						});
-						
-						var tab = new auiTab({
+						new auiTab({
 							element : document.getElementById("footer"),
 							index : i + 1,
 						}, function(ret) {
@@ -204,7 +164,6 @@
 						break;
 					} else {
 						header[i].style.display = 'none';
-//						break;
 					}
 				}
 			}
