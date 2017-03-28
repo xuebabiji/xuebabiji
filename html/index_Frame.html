@@ -237,6 +237,12 @@
 
         }
     });
+    
+    init = function() {
+        for (var i = 0; i <= 4; i++) {
+            $api.fixStatusBar(document.querySelector('#header_' + i));
+        }
+    }
 
 </script>
 </body>
