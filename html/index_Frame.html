@@ -63,7 +63,6 @@
 			 *
 			 *  */
 			apiready = function() {
-				init();
 				api.parseTapmode();
 				openFrameGroup();
 			}
@@ -74,17 +73,15 @@
 			 *
 			 *  */
 			openFrameGroup = function() {
-				var header = $api.byId('header_0');
-				var headerh = $api.offset(header).h;
 				var footer = $api.byId('footer');
 				var footerh = $api.offset(footer).h;
 				api.openFrameGroup({
 					name : 'mainGroup',
 					rect : {
 						x : 0,
-						y : headerh,
+						y : 0,
 						w : 'auto',
-						h : api.winHeight - headerh - footerh
+						h : api.winHeight - footerh
 					},
 					frames : [{
 						name : 'faxian',
@@ -146,32 +143,21 @@
 				}
 			});
 			qieHuan = function(num) {
-				var temp = 0;
-				var header = new Array(5);
-				for (var i = 0; i < header.length; i++, temp++) {
-					header[i] = $api.byId('header_' + i);
+				for (var i = 0; i < 5; i++) {
 					if (i == num) {
-						header[i].style.display = 'inline-block';
 						api.setFrameGroupIndex({
 							name : 'mainGroup',
 							index : i
 						});
-						new auiTab({
-							element : document.getElementById("footer"),
-							index : i + 1,
-						}, function(ret) {
-						});
-						break;
-					} else {
-						header[i].style.display = 'none';
+                       new auiTab({
+                            index : i+1,
+                        }, function(ret) {
+                        })
+
 					}
 				}
-			}
-			init = function() {
-				for (var i = 0; i <= 4; i++) {
-					$api.fixStatusBar(document.querySelector('#header_' + i));
-				}
-			}
+			};
+
 		</script>
 	</body>
 </html>

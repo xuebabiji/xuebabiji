@@ -15,7 +15,7 @@
 		</style>
 	</head>
 	<body>
-	<header id="header_0" class="aui-bar aui-bar-nav" style="padding-top:25px;">
+	<header id="header" class="aui-bar aui-bar-nav" style="padding-top:25px;">
 		<a class="aui-pull-left"> <span class="aui-iconfont aui-icon-search"></span></a>
 		<div class="aui-title">
 			<div class="aui-bar aui-bar-btn aui-bar-btn-round">
@@ -42,6 +42,7 @@
 	<script type="text/javascript" src="../script/aui-tab.js" ></script>
 	<script type="text/javascript">
 		apiready = function() {
+            $api.fixStatusBar(document.querySelector('#header'));
 			api.parseTapmode();
 //			openfaxian();
 		}

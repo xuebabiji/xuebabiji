@@ -36,7 +36,7 @@
     </style>
 </head>
 <body>
-<header id="header_3" class="aui-bar aui-bar-nav" style="padding-top:25px;">
+<header id="header" class="aui-bar aui-bar-nav" style="padding-top:25px;">
     <div class="aui-title">
         消息
     </div>
@@ -53,6 +53,7 @@
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
 	apiready = function(){
+        $api.fixStatusBar(document.querySelector('#header'));
 		
 	};
 </script>
