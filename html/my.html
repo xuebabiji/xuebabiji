@@ -8,33 +8,35 @@
     <link rel="stylesheet" type="text/css" href="../css/api.css"/>
         <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
     <style>
-    	body{
-    		
-    	}
-    	 .text-white {
-            color: #000 !important;
-        }
         .aui-list-item{
-        height:10vh;
+        height:8vh;
         }
-        header{height: 3.5rem}
+        .user-info{
+            text-align: center;
+            width: 100%;
+            background-color: #03a9f4;
+        }
+        .user-info img{
+            width: 24vw;
+            margin-left: 38vw;
+            border-radius: 50%;
+        }
+        .user-info p{
+            font-size: 0.9em;
+            color: #fff;
+            margin-top: 3vh;
+            padding-bottom: 3vh;
+        }
         </style>
 </head>
 <body>
-	 <section class="aui-content" id="user-info">
-        <div class="aui-list aui-media-list aui-list-noborder">
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner ">
-                    <div class="aui-list-item-media" style="width:3rem;">
-                        <img src="../img/IMG_0605.JPG" class="aui-img-round" >
-                    </div>
-                    <div class="aui-list-item-inner aui-list-item-arrow">
-                        <div class="aui-list-item-text text-white aui-font-size-15">您尚未登录，点击这里进行登录</div>                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="aui-content" style="margin-top:20px;">
+<section class="aui-content" id="user-info">
+    <div class="user-info aui-list-noborder">
+        <img src="../img/IMG_0605.JPG">
+        <p>请登录</p>
+    </div>
+</section>
+    <section class="aui-content">
         <ul class="aui-list aui-list-in aui-margin-b-15">
             <li class="aui-list-item">
                 <div class="aui-list-item-label-icon">
@@ -68,6 +70,15 @@
                     <div class="aui-list-item-title">我的关注	</div>
                 </div>
             </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-image aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">成就</div>
+                </div>
+            </li>
+
         </ul>
         <ul class="aui-list aui-list-in">
             <li class="aui-list-item">
@@ -75,7 +86,7 @@
                     <i class="aui-iconfont aui-icon-cart aui-text-info"></i>
                 </div>
                 <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">我的认证</div>
+                    <div class="aui-list-item-title">设置</div>
                     <div class="aui-list-item-right"></div>
                 </div>
             </li>
@@ -84,7 +95,7 @@
                     <i class="aui-iconfont aui-icon-cert aui-text-warning"></i>
                 </div>
                 <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">设置</div>
+                    <div class="aui-list-item-title">退出登录</div>
                     <div class="aui-list-item-right"></div>
                 </div>
             </li>
@@ -95,7 +106,7 @@
 <script type="text/javascript">
 	apiready = function(){
         $api.fixStatusBar(document.querySelector('#header'));
-		
+
 	};
 </script>
 </html>
