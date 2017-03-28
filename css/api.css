@@ -1,3 +1,18 @@
+/*添加本地字体*/
+@font-face
+{
+    font-family: xueba;
+    src: url('../res/System San Francisco Display thin.ttf')
+}
+@font-face
+{
+    font-family: xueba1;
+    src: url('../res/System San Francisco Display Bold.ttf');
+    font-weight:bold;
+}
+*{
+    font-family: xueba;
+}
 .aui-fold-active {
 	background: #f4f4f4;
 }
