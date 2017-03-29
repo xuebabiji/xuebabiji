@@ -57,16 +57,15 @@
 	<script type="text/javascript" src="./script/api.js"></script>
 	<script type="text/javascript">
 		apiready = function() {
-			//frame的高度为当前window高度减去header和footer的高度
-			var frameH = api.winHeight;
+
 			api.openFrame({
-				name : 'main',
-				url : 'html/index_Frame.html',
+				name : 'mainGroup',
+				url : 'html/mainGroup.html',
 				rect : {
 					x : 0,
 					y : 'auto',
 					w : 'auto',
-					h : frameH
+					h : api.winHeight
 				}
 			});
 		};
