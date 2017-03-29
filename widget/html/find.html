@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <style>
+        body {
+            height: 100%;
+        }
+
+        .main {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .main img {
+            width: 25vw;
+            height: 25vw;
+            margin-top: 30vw;
+            display: inline-block;
+        }
+
+        .main p {
+            font-size: 0.8em;
+            color: #757575;
+        }
+
+        .main a {
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2vw;
+            font-size: 1em;
+            color: #757575;
+            border: 1px dashed #757575;
+            padding: 2px 8px;
+        }
+        .aui-tab{
+            position: fixed;
+            top:0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="aui-tab" id="tab">
+    <div class="aui-tab-item aui-active">
+        最新
+    </div>
+    <div class="aui-tab-item">
+        人气
+    </div>
+</div>
+<div class="main">
+    <img src="../img/logo.v2.jpg" alt="!">
+    <p>没有任何内容</p>
+    <a href="#">轻触重试</a>
+</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-tab.js"></script>
+<script type="text/javascript">
+    apiready = function () {
+    }
+</script>
+</html>

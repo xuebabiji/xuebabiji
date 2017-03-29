@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/mainGroup.css"/>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<header id="header_0" class="aui-bar aui-bar-nav" style="padding-top:25px;">
+    <a class="aui-pull-left"> <span class="aui-iconfont aui-icon-search"></span></a>
+    <div class="aui-title">
+        <div class="aui-bar aui-bar-btn aui-bar-btn-round">
+            <div class="aui-bar-btn-item aui-active">
+                发现
+            </div>
+            <div class="aui-bar-btn-item">
+                帮帮
+            </div>
+        </div>
+    </div>
+    <a class="aui-pull-right"> <span class="aui-iconfont aui-icon-plus"></span> </a>
+</header>
+<header id="header_1" class="aui-bar aui-bar-nav" style="padding-top:25px">
+    <div class="aui-title">
+        <div class="aui-bar aui-bar-btn aui-bar-btn-round">
+            <div class="aui-bar-btn-item aui-active">
+                学霸文库
+            </div>
+            <div class="aui-bar-btn-item">
+                创意服务
+            </div>
+        </div>
+    </div>
+    <a class="aui-pull-right"> <span class="aui-iconfont aui-icon-search"></span> </a>
+</header>
+<header id="header_2" class="aui-bar aui-bar-nav" style="padding-top:25px;">
+    <div class="aui-title">
+        今天
+    </div>
+</header>
+<header id="header_3" class="aui-bar aui-bar-nav" style="padding-top:25px;">
+    <div class="aui-title">
+        消息
+    </div>
+</header>
+<header id="header_4" class="aui-bar aui-bar-nav" style="padding-top:25px;">
+    <div class="aui-title">
+
+    </div>
+</header>
+<div id="main"></div>
+<footer class="aui-bar aui-bar-tab" id="footer">
+    <div class="aui-bar-tab-item aui-active" id="footer_0" tapmode>
+        <i class="aui-iconfont aui-icon-home"></i>
+        <div class="aui-bar-tab-label">
+            首页
+        </div>
+    </div>
+    <div class="aui-bar-tab-item" id="chanPin footer_1" tapmode>
+        <i class="aui-iconfont aui-icon-star"></i>
+        <div class="aui-bar-tab-label">
+            文库
+        </div>
+    </div>
+    <div class="aui-bar-tab-item" id="footer_2" tapmode>
+        <i class="aui-iconfont aui-icon-camera"></i>
+        <div class="aui-bar-tab-label">
+            今天
+        </div>
+    </div>
+    <div class="aui-bar-tab-item" id="footer_3" tapmode>
+        <div class="aui-badge" id="touBiao">
+            99
+        </div>
+        <i class="aui-iconfont aui-icon-comment"></i>
+        <div class="aui-bar-tab-label">
+            消息
+        </div>
+    </div>
+    <div class="aui-bar-tab-item" id="footer_4" tapmode>
+        <i class="aui-iconfont aui-icon-my"></i>
+        <div class="aui-bar-tab-label">
+            我的
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-tab.js"></script>
+<script type="text/javascript">
+    /**
+     * App 初始函数
+     *
+     *  */
+    apiready = function () {
+        init();
+        api.parseTapmode();
+        openFrameGroup();
+    }
+    /**
+     *打开窗口组的函数
+     *
+     * frames:窗口组页面
+     *
+     *  */
+    openFrameGroup = function () {
+        var header = $api.byId('header_0');
+        var headerh = $api.offset(header).h;
+        var footer = $api.byId('footer');
+        var footerh = $api.offset(footer).h;
+        api.openFrameGroup({
+            name: 'mainGroup',
+            rect: {
+                x: 0,
+                y: headerh - 1,
+                w: 'auto',
+                h: api.winHeight - headerh - footerh + 1
+            },
+            frames: [{
+                name: 'find',
+                url: 'find.html',
+                bgColor: '#fff'
+            }, {
+                name: 'wenku',
+                url: 'library.html',
+                bgColor: '#fff'
+            }, {
+                name: 'today',
+                url: 'today.html',
+                bgColor: '#fff'
+            }, {
+                name: 'msg',
+                url: 'message.html',
+                bgColor: '#fff'
+            }, {
+                name: 'my',
+                url: 'my.html',
+                bgColor: '#fff'
+            }]
+        }, function (ret, err) {
+            var index = ret.index;
+            if (index == 0) {
+                qieHuan1(0);
+            } else if (index == 1) {
+                qieHuan1(1);
+            } else if (index == 2) {
+                qieHuan1(2);
+            } else if (index == 3) {
+                qieHuan1(3);
+            } else if (index == 4) {
+                qieHuan1(4);
+            }
+        });
+    }
+    /**
+     * 控制 底部导航 切换的 AUI-TAB.JS 类
+     *
+     *  */
+    var tab = new auiTab({
+        element: document.getElementById("footer"),
+        index: 1,
+        repeatClick: false
+    }, function (ret) {
+        if (ret) {
+            if (ret.index == 1) {
+                qieHuan(0);
+            } else if (ret.index == 2) {
+                qieHuan(1);
+            } else if (ret.index == 3) {
+                qieHuan(2);
+            } else if (ret.index == 4) {
+                qieHuan(3);
+            } else if (ret.index == 5) {
+                qieHuan(4);
+            }
+        }
+    });
+    qieHuan = function (num) {
+        var header = new Array(5);
+        for (var i = 0; i < header.length; i++) {
+            header[i] = $api.byId('header_' + i);
+            if (i == num) {
+                header[i].style.display = 'inline-block';
+                api.setFrameGroupIndex({
+                    name: 'mainGroup',
+                    index: i
+                });
+                new auiTab({
+                    element: document.getElementById("footer"),
+                    index: i + 1
+                }, function (ret) {
+                });
+
+            } else {
+                header[i].style.display = 'none';
+            }
+        }
+    }
+
+    qieHuan1 = function (num) {
+        var header = new Array(5);
+        for (var i = 0; i < header.length; i++) {
+            header[i] = $api.byId('header_' + i);
+            if (i == num) {
+                header[i].style.display = 'inline-block';
+                new auiTab({
+                    element: document.getElementById("footer"),
+                    index: num + 1
+                }, function (ret) {
+                });
+            }
+            else {
+                header[i].style.display = 'none';
+            }
+        }
+    }
+    init = function () {
+        for (var i = 0; i <= 4; i++) {
+            $api.fixStatusBar(document.querySelector('#header_' + i));
+        }
+    }
+</script>
+</body>
+</html>
